@@ -1,10 +1,9 @@
 # mutate4ts
 
-Use `mutate4ts` as the TypeScript mutation gate in SwarmForge.
+Use `mutate4ts` for MUTATE verification of TypeScript projects.
 
-```bash
-npm install --global github:lukasa1993/mutate4ts
-mutate4ts --test-command "npm test" --fail-on-survivors
-```
-
-Keep manifests under `target/`. Do not edit mutation manifests by hand.
+1. Run `mutate4ts --help` before first use.
+2. Use the project test/build commands that create current coverage or execute the full unit suite.
+3. Run the gate with `--fail-on-survivors`.
+4. Treat exit `1` as an infrastructure or configuration failure. Do not report it as a quality pass.
+5. Treat exit `2` as a quality-gate failure.
